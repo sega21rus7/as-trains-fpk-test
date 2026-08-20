@@ -3,7 +3,8 @@ import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-export default defineConfig({
+export default defineConfig(({ command }) => ({
+  base: command === 'build' ? '/as-trains-fpk-test/' : '/',
   plugins: [react()],
   resolve: {
     alias: {
@@ -16,4 +17,4 @@ export default defineConfig({
     port: 5173,
     strictPort: true,
   },
-});
+}));
