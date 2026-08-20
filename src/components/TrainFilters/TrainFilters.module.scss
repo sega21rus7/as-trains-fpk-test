@@ -1,0 +1,164 @@
+.panel {
+  position: relative;
+  z-index: 2;
+  margin-top: -2rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: var(--surface-translucent);
+  box-shadow: 0 1.5rem 3.5rem var(--shadow);
+  backdrop-filter: blur(14px);
+}
+
+.headingRow {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.title {
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(1.35rem, 3vw, 1.8rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.count {
+  flex: 0 0 auto;
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 0.88rem;
+}
+
+.count strong {
+  color: var(--accent);
+  font-size: 1.15rem;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: minmax(13rem, 1.45fr) repeat(2, minmax(10rem, 1fr)) auto;
+  align-items: end;
+  gap: 0.75rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.45rem;
+  color: var(--text);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  min-height: 3rem;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  outline: none;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 520;
+  transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.field input {
+  padding: 0.75rem 0.9rem;
+}
+
+.field input::placeholder {
+  color: var(--text-soft);
+  opacity: 1;
+}
+
+.field select {
+  padding: 0.75rem 2.25rem 0.75rem 0.9rem;
+}
+
+.field input:hover,
+.field select:hover {
+  border-color: var(--border-strong);
+  background: var(--surface);
+}
+
+.field input:focus-visible,
+.field select:focus-visible {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--focus);
+}
+
+.reset {
+  min-height: 3rem;
+  padding: 0.75rem 1.15rem;
+  border: 1px solid var(--accent);
+  border-radius: 0.75rem;
+  background: var(--surface);
+  color: var(--accent);
+  font-weight: 720;
+  cursor: pointer;
+  transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.reset:hover {
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+
+.reset:active {
+  transform: translateY(1px);
+}
+
+.reset:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+@media (max-width: 900px) {
+  .form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .searchField {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 560px) {
+  .panel {
+    margin-top: -1rem;
+    padding: 1rem;
+  }
+
+  .headingRow {
+    align-items: start;
+  }
+
+  .form {
+    grid-template-columns: 1fr;
+  }
+
+  .searchField {
+    grid-column: auto;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .panel {
+    background: var(--surface);
+    backdrop-filter: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .field input,
+  .field select,
+  .reset {
+    transition: none;
+  }
+}
