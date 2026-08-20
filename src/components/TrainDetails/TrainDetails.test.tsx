@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import type { TTrain } from '../../types/train';
@@ -24,7 +24,10 @@ describe('TrainDetails', () => {
 
     expect(screen.getByRole('dialog', { name: train.name })).toBeInTheDocument();
     expect(screen.getByText(train.description)).toBeInTheDocument();
-    expect(screen.getByText('Тула')).toBeInTheDocument();
+    const route = screen.getByRole('list', { name: 'Маршрут путешествия' });
+    expect(within(route).getAllByRole('listitem').map((item) => item.textContent)).toEqual(
+      train.route,
+    );
     expect(screen.getByText('Кремль')).toBeInTheDocument();
     expect(screen.getByText('#выходные')).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /Купить билет/ })).toHaveAttribute(

@@ -2,6 +2,7 @@ import type React from 'react';
 
 import type { TTrain } from '../../types/train';
 import { formatDate, formatPrice, getRouteEndpoints, pluralizeDays } from '../../utils/trainData';
+import { Tags } from '../Tags/Tags';
 import styles from './TrainCard.module.scss';
 
 type TProps = {
@@ -32,11 +33,7 @@ const TrainCard: React.FC<TProps> = ({ train, previewDeparture, onOpen }) => (
     </div>
 
     <div className={styles.footer}>
-      <ul className={styles.tags} aria-label="Особенности маршрута">
-        {train.tags.slice(0, 2).map((tag) => (
-          <li key={tag}>{tag}</li>
-        ))}
-      </ul>
+      <Tags tags={train.tags} ariaLabel="Особенности маршрута" />
       <button className={styles.more} type="button" onClick={() => onOpen(train)}>
         Подробнее
       </button>

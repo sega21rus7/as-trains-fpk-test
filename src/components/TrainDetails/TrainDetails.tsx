@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 
 import type { TTrain } from '../../types/train';
 import { formatDate, formatPrice, pluralizeDays } from '../../utils/trainData';
+import { Tags } from '../Tags/Tags';
 import styles from './TrainDetails.module.scss';
 
 type TProps = {
@@ -90,7 +91,7 @@ const TrainDetails: React.FC<TProps> = ({ train, onClose }) => {
             <p className={styles.kicker} id="route-title">
               Маршрут путешествия
             </p>
-            <ol className={styles.route}>
+            <ol className={styles.route} aria-labelledby="route-title">
               {train.route.map((city, index) => (
                 <li key={`${city}-${index}`}>{city}</li>
               ))}
@@ -132,11 +133,7 @@ const TrainDetails: React.FC<TProps> = ({ train, onClose }) => {
 
           <section className={styles.tagsSection} aria-labelledby="tags-title">
             <h3 id="tags-title">Особенности</h3>
-            <ul className={styles.tags}>
-              {train.tags.map((tag) => (
-                <li key={tag}>#{tag}</li>
-              ))}
-            </ul>
+            <Tags tags={train.tags} />
           </section>
 
           <a
