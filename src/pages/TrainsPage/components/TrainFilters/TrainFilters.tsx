@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 
 import type { TTrainFilters } from '@src/types/train';
@@ -22,6 +23,10 @@ export const TrainFilters: React.FC<TProps> = ({
   onChange,
 }) => {
   const { getValues, register, reset } = useForm<TTrainFilters>({ defaultValues: filters });
+
+  useEffect(() => {
+    reset(filters);
+  }, [filters, reset]);
 
   const handleChange = (): void => {
     onChange(getValues());

@@ -41,6 +41,9 @@ describe('TrainsPage', () => {
 
     await user.click(screen.getByRole('button', { name: 'Сбросить фильтры' }));
     expect(screen.getAllByRole('article')).toHaveLength(5);
+    expect(screen.getByRole('searchbox', { name: 'Название поезда' })).toHaveValue('');
+    expect(screen.getByRole('combobox', { name: 'Регион' })).toHaveValue('');
+    expect(screen.getByRole('combobox', { name: 'Месяц отправления' })).toHaveValue('');
   });
 
   it('открывает подробности, закрывает их по Escape и возвращает фокус', async () => {
