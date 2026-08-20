@@ -1,0 +1,44 @@
+{
+  "name": "as-trains-fpk-test",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "vite --open",
+    "build": "tsc --noEmit && vite build",
+    "test": "jest",
+    "test:coverage": "chmod +x jest/coverage.sh && jest/coverage.sh",
+    "lint": "eslint --cache --ext=js,jsx,ts,tsx src",
+    "lint:fix": "eslint --cache --ext=js,jsx,ts,tsx src --fix"
+  },
+  "dependencies": {
+    "react": "latest",
+    "react-dom": "latest",
+    "react-hook-form": "latest"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "latest",
+    "@babel/preset-react": "latest",
+    "@babel/preset-typescript": "latest",
+    "@eslint/js": "latest",
+    "@testing-library/jest-dom": "latest",
+    "@testing-library/react": "latest",
+    "@testing-library/user-event": "latest",
+    "@types/jest": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@vitejs/plugin-react": "latest",
+    "babel-jest": "latest",
+    "eslint": "latest",
+    "eslint-plugin-react-hooks": "latest",
+    "eslint-plugin-react-refresh": "latest",
+    "identity-obj-proxy": "latest",
+    "jest": "latest",
+    "jest-environment-jsdom": "latest",
+    "sass": "latest",
+    "typescript": "latest",
+    "typescript-eslint": "latest",
+    "vite": "latest"
+  }
+}
