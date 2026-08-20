@@ -8,7 +8,7 @@
     "dev": "vite --open",
     "build": "tsc --noEmit && vite build",
     "test": "jest",
-    "test:coverage": "chmod +x jest/coverage.sh && jest/coverage.sh",
+    "test:coverage": "jest --coverage",
     "lint": "eslint --cache --ext=js,jsx,ts,tsx src",
     "lint:fix": "eslint --cache --ext=js,jsx,ts,tsx src --fix"
   },
