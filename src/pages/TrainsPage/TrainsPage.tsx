@@ -1,10 +1,7 @@
+import React from 'react';
 import { useEffect, useRef, useState } from 'react';
-import type React from 'react';
 
 import rawTrainData from '../../../trains.json';
-import { TrainCard } from '../../components/TrainCard';
-import { TrainDetails } from '../../components/TrainDetails';
-import { TrainFilters } from '../../components/TrainFilters';
 import type { TTrain, TTrainFilters } from '../../types/train';
 import {
   filterTrains,
@@ -13,6 +10,10 @@ import {
   getRegions,
   parseTrainData,
 } from '../../utils';
+
+import { TrainCard } from './components/TrainCard';
+import { TrainDetails } from './components/TrainDetails';
+import { TrainFilters } from './components/TrainFilters';
 
 import styles from './TrainsPage.module.scss';
 

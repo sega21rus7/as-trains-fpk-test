@@ -1,6 +1,6 @@
-import type React from 'react';
+import React from 'react';
 
-import { Tag } from '../Tag';
+import { Tag } from './components/Tag';
 
 import styles from './Tags.module.scss';
 

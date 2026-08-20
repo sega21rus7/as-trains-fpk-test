@@ -1,7 +1,7 @@
-import type React from 'react';
+import React from 'react';
 
-import type { TTrain } from '../../types/train';
-import { formatDate, formatPrice, getRouteEndpoints, pluralizeDays } from '../../utils';
+import type { TTrain } from '../../../../types/train';
+import { formatDate, formatPrice, getRouteEndpoints, pluralizeDays } from '../../../../utils';
 import { Tags } from '../Tags';
 
 import styles from './TrainCard.module.scss';
