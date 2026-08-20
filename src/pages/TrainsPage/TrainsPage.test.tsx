@@ -1,11 +1,11 @@
 import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { App } from '.';
+import { TrainsPage } from '.';
 
-describe('App', () => {
+describe('TrainsPage', () => {
   it('первоначально показывает все пять поездов', () => {
-    render(<App />);
+    render(<TrainsPage />);
 
     expect(screen.getAllByRole('article')).toHaveLength(5);
     expect(screen.getByText(/Найдено:/)).toHaveTextContent('Найдено: 5');
@@ -13,7 +13,7 @@ describe('App', () => {
 
   it('ищет по части названия без учёта регистра и сбрасывает поиск', async () => {
     const user = userEvent.setup();
-    render(<App />);
+    render(<TrainsPage />);
 
     await user.type(screen.getByRole('searchbox', { name: 'Название поезда' }), '  КАРЕЛИЮ  ');
     expect(screen.getAllByRole('article')).toHaveLength(1);
@@ -25,7 +25,7 @@ describe('App', () => {
 
   it('совмещает фильтры региона и месяца и показывает пустое состояние', async () => {
     const user = userEvent.setup();
-    render(<App />);
+    render(<TrainsPage />);
 
     await user.selectOptions(screen.getByRole('combobox', { name: 'Регион' }), 'Сибирь');
     await user.selectOptions(screen.getByRole('combobox', { name: 'Месяц отправления' }), '2026-10');
@@ -41,7 +41,7 @@ describe('App', () => {
 
   it('открывает подробности, закрывает их по Escape и возвращает фокус', async () => {
     const user = userEvent.setup();
-    render(<App />);
+    render(<TrainsPage />);
     const card = screen.getByRole('heading', { name: 'В Карелию' }).closest('article');
 
     expect(card).not.toBeNull();
