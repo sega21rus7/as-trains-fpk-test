@@ -1,8 +1,8 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
-import type { TTrainFilters } from '../../../../types/train';
-import { formatMonth } from '../../../../utils';
+import type { TTrainFilters } from '@src/types/train';
+import { formatMonth } from '@src/utils';
 
 import styles from './TrainFilters.module.scss';
 

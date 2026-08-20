@@ -32,8 +32,8 @@ export default tseslint.config(
             ['^\u0000'],
             // Libs imports
             ['^react$', '^[a-z]', '^@[a-z]'],
-            // Imports starting with `@`
-            ['^@/'],
+            // Project aliases
+            ['^@(src|root)(?:/|$)'],
             // Imports starting with `../`
             ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
             // Imports starting with `./`

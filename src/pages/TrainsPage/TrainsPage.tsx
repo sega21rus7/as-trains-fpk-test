@@ -1,15 +1,15 @@
 import React from 'react';
 import { useEffect, useRef, useState } from 'react';
 
-import rawTrainData from '../../../trains.json';
-import type { TTrain, TTrainFilters } from '../../types/train';
+import rawTrainData from '@root/trains.json';
+import type { TTrain, TTrainFilters } from '@src/types/train';
 import {
   filterTrains,
   getMonths,
   getPreviewDeparture,
   getRegions,
   parseTrainData,
-} from '../../utils';
+} from '@src/utils';
 
 import { TrainCard } from './components/TrainCard';
 import { TrainDetails } from './components/TrainDetails';

@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
-import type { TTrain } from '../../../../types/train';
+import type { TTrain } from '@src/types/train';
 
 import { TrainCard } from '.';
 

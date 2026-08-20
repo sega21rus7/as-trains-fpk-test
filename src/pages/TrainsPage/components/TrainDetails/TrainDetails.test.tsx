@@ -1,7 +1,7 @@
 import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import type { TTrain } from '../../../../types/train';
+import type { TTrain } from '@src/types/train';
 
 import { TrainDetails } from '.';
 

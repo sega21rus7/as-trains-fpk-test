@@ -1,8 +1,9 @@
 import React from 'react';
 import { useEffect, useRef } from 'react';
 
-import type { TTrain } from '../../../../types/train';
-import { formatDate, formatPrice, pluralizeDays } from '../../../../utils';
+import type { TTrain } from '@src/types/train';
+import { formatDate, formatPrice, pluralizeDays } from '@src/utils';
+
 import { Tags } from '../Tags';
 
 import styles from './TrainDetails.module.scss';
