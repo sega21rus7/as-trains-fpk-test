@@ -74,7 +74,7 @@ export const TrainsPage: React.FC<TProps> = () => {
         </div>
         <div className={styles.heroMedia}>
           <img
-            src="/train-hero.jpg"
+            src="train-hero.jpg"
             alt="Пассажирский поезд в пути"
             width="1920"
             height="821"

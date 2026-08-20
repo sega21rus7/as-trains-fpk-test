@@ -7,6 +7,10 @@ describe('TrainsPage', () => {
   it('первоначально показывает все пять поездов', () => {
     render(<TrainsPage />);
 
+    expect(screen.getByRole('img', { name: 'Пассажирский поезд в пути' })).toHaveAttribute(
+      'src',
+      'train-hero.jpg',
+    );
     expect(screen.getAllByRole('article')).toHaveLength(5);
     expect(screen.getByText(/Найдено:/)).toHaveTextContent('Найдено: 5');
   });
