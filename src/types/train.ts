@@ -1,4 +1,4 @@
-type TTrain = {
+export type TTrain = {
   id: string;
   name: string;
   region: string;
@@ -12,14 +12,12 @@ type TTrain = {
   buy_url: string;
 };
 
-type TTrainData = {
+export type TTrainData = {
   trains: TTrain[];
 };
 
-type TTrainFilters = {
+export type TTrainFilters = {
   search: string;
   region: string;
   month: string;
 };
-
-export type { TTrain, TTrainData, TTrainFilters };

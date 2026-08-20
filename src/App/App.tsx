@@ -1,10 +1,10 @@
-import type React from 'react';
 import { useEffect, useRef, useState } from 'react';
+import type React from 'react';
 
 import rawTrainData from '../../trains.json';
-import { TrainCard } from '../components/TrainCard/TrainCard';
-import { TrainDetails } from '../components/TrainDetails/TrainDetails';
-import { TrainFilters } from '../components/TrainFilters/TrainFilters';
+import { TrainCard } from '../components/TrainCard';
+import { TrainDetails } from '../components/TrainDetails';
+import { TrainFilters } from '../components/TrainFilters';
 import type { TTrain, TTrainFilters } from '../types/train';
 import {
   filterTrains,
@@ -12,7 +12,8 @@ import {
   getPreviewDeparture,
   getRegions,
   parseTrainData,
-} from '../utils/trainData';
+} from '../utils';
+
 import styles from './App.module.scss';
 
 type TProps = Record<string, never>;
@@ -20,7 +21,7 @@ type TProps = Record<string, never>;
 const trainData = parseTrainData(rawTrainData);
 const initialFilters: TTrainFilters = { search: '', region: '', month: '' };
 
-const App: React.FC<TProps> = () => {
+export const App: React.FC<TProps> = () => {
   const [filters, setFilters] = useState<TTrainFilters>(initialFilters);
   const [selectedTrain, setSelectedTrain] = useState<TTrain | null>(null);
   const openingElementRef = useRef<HTMLElement | null>(null);
@@ -130,5 +131,3 @@ const App: React.FC<TProps> = () => {
     </div>
   );
 };
-
-export { App };

@@ -1,9 +1,10 @@
-import type React from 'react';
 import { useEffect, useRef } from 'react';
+import type React from 'react';
 
 import type { TTrain } from '../../types/train';
-import { formatDate, formatPrice, pluralizeDays } from '../../utils/trainData';
-import { Tags } from '../Tags/Tags';
+import { formatDate, formatPrice, pluralizeDays } from '../../utils';
+import { Tags } from '../Tags';
+
 import styles from './TrainDetails.module.scss';
 
 type TProps = {
@@ -13,7 +14,7 @@ type TProps = {
 
 const normalizeDashCharacters = (value: string): string => value.replace(/[—–]/g, '-');
 
-const TrainDetails: React.FC<TProps> = ({ train, onClose }) => {
+export const TrainDetails: React.FC<TProps> = ({ train, onClose }) => {
   const dialogRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -149,5 +150,3 @@ const TrainDetails: React.FC<TProps> = ({ train, onClose }) => {
     </div>
   );
 };
-
-export { TrainDetails };

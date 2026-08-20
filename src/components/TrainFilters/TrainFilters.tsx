@@ -2,7 +2,8 @@ import type React from 'react';
 import { useForm } from 'react-hook-form';
 
 import type { TTrainFilters } from '../../types/train';
-import { formatMonth } from '../../utils/trainData';
+import { formatMonth } from '../../utils';
+
 import styles from './TrainFilters.module.scss';
 
 type TProps = {
@@ -13,7 +14,13 @@ type TProps = {
   onChange: (filters: TTrainFilters) => void;
 };
 
-const TrainFilters: React.FC<TProps> = ({ filters, months, regions, resultCount, onChange }) => {
+export const TrainFilters: React.FC<TProps> = ({
+  filters,
+  months,
+  regions,
+  resultCount,
+  onChange,
+}) => {
   const { getValues, register, reset } = useForm<TTrainFilters>({ defaultValues: filters });
 
   const handleChange = (): void => {
@@ -74,5 +81,3 @@ const TrainFilters: React.FC<TProps> = ({ filters, months, regions, resultCount,
     </section>
   );
 };
-
-export { TrainFilters };

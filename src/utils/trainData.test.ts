@@ -1,4 +1,5 @@
 import type { TTrain } from '../types/train';
+
 import {
   filterTrains,
   formatDate,
@@ -10,7 +11,7 @@ import {
   getRouteEndpoints,
   parseTrainData,
   pluralizeDays,
-} from './trainData';
+} from '.';
 
 const trains: TTrain[] = [
   {

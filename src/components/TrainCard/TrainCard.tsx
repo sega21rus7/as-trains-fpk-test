@@ -1,8 +1,9 @@
 import type React from 'react';
 
 import type { TTrain } from '../../types/train';
-import { formatDate, formatPrice, getRouteEndpoints, pluralizeDays } from '../../utils/trainData';
-import { Tags } from '../Tags/Tags';
+import { formatDate, formatPrice, getRouteEndpoints, pluralizeDays } from '../../utils';
+import { Tags } from '../Tags';
+
 import styles from './TrainCard.module.scss';
 
 type TProps = {
@@ -11,7 +12,7 @@ type TProps = {
   onOpen: (train: TTrain) => void;
 };
 
-const TrainCard: React.FC<TProps> = ({ train, previewDeparture, onOpen }) => (
+export const TrainCard: React.FC<TProps> = ({ train, previewDeparture, onOpen }) => (
   <article className={styles.card}>
     <div className={styles.topline}>
       <span className={styles.region}>{train.region}</span>
@@ -40,5 +41,3 @@ const TrainCard: React.FC<TProps> = ({ train, previewDeparture, onOpen }) => (
     </div>
   </article>
 );
-
-export { TrainCard };

@@ -1,7 +1,8 @@
 import { render, screen } from '@testing-library/react';
 
 import type { TTrain } from '../../types/train';
-import { TrainCard } from './TrainCard';
+
+import { TrainCard } from '.';
 
 const train: TTrain = {
   id: 'karelia',

@@ -6,8 +6,6 @@ type TProps = {
   children: string;
 };
 
-const Tag: React.FC<TProps> = ({ children }) => (
+export const Tag: React.FC<TProps> = ({ children }) => (
   <li className={styles.tag}>#{children}</li>
 );
-
-export { Tag };

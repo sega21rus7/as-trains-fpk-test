@@ -1,6 +1,7 @@
 import type React from 'react';
 
-import { Tag } from '../Tag/Tag';
+import { Tag } from '../Tag';
+
 import styles from './Tags.module.scss';
 
 type TProps = {
@@ -8,12 +9,10 @@ type TProps = {
   ariaLabel?: string;
 };
 
-const Tags: React.FC<TProps> = ({ tags, ariaLabel }) => (
+export const Tags: React.FC<TProps> = ({ tags, ariaLabel }) => (
   <ul className={styles.tags} aria-label={ariaLabel}>
     {tags.map((tag) => (
       <Tag key={tag}>{tag}</Tag>
     ))}
   </ul>
 );
-
-export { Tags };

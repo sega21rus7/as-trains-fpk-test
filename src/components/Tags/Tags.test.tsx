@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 
-import { Tags } from './Tags';
+import { Tags } from '.';
 
 describe('Tags', () => {
   it('показывает список тегов с доступным именем', () => {
