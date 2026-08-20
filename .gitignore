@@ -3,3 +3,5 @@ dist
 coverage
 .eslintcache
 *.local
+output/playwright
+.playwright-cli

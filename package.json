@@ -22,6 +22,7 @@
     "@babel/preset-react": "latest",
     "@babel/preset-typescript": "latest",
     "@eslint/js": "latest",
+    "@playwright/mcp": "^0.0.79",
     "@testing-library/jest-dom": "latest",
     "@testing-library/react": "latest",
     "@testing-library/user-event": "latest",
